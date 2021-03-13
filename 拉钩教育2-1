@@ -1,0 +1,39 @@
+1、谈谈你对工程化的初步认识，结合你之前遇到过的问题说出三个以上工程化能够解决问题或者带来的价值。
+
+是指遵循一定的标准和规范，通过工具去提高效率，降低成本的一种手段。通过模块化去提高项目的可维护性，运行环境不能被支持
+解决的问题：
+手动上传部署代码到服务器，，部署上线前压缩代码以及资源文件，将浏览器不识别的代码转换成，兼容性更好的语言
+多人协同开发时，统一大家的代码风格
+使用mock接口，前端提前开发时不依赖后段接口
+
+2、你认为脚手架除了为我们创建项目结构，还有什么更深的意义？
+
+自动的创建项目基础文件的工具，提供项目规范和约定，解决创建项目的过程中那些复杂的工作。多人协同开发时不会造成代码风格差异过大，减少维护成本，提高开发效率。
+
+
+
+1、概述脚手架实现的过程，并使用 NodeJS 完成一个自定义的小型脚手架工具
+项目地址：https://github.com/xiaodashi12/sample-scaff
+创建目录 sample-scaff mkdir sample-scaff
+创建 package.json yarn init
+在package.json中添加bin字段，指定cli文件的入口文件: "bin":"./cli.js"
+安装所需要得依赖
+yarn add inquirer --save   //询问
+yarn add ejs --save //添加模板引擎
+创建cli.js文件
+
+yarn link 关联到全局变量
+执行测试
+mkdir demo  //创建测试文件夹
+cd demo    //切换文件夹
+sample-scaff  //执行脚手架
+
+2、尝试使用 Gulp 完成项目的自动化构建
+项目地址：https://github.com/xiaodashi12/sample-gulp
+准备工作
+mkdir sample-gulp
+cd sample-gulp
+npm init --yes  //初始化package文件
+安装gulp
+npm install gulp --save //安裝gulp模块
+创建gulpfile.js文件
