@@ -29,11 +29,25 @@ cd demo    //切换文件夹
 sample-scaff  //执行脚手架
 
 2、尝试使用 Gulp 完成项目的自动化构建
-项目地址：https://github.com/xiaodashi12/sample-gulp
+
 准备工作
-mkdir sample-gulp
-cd sample-gulp
-npm init --yes  //初始化package文件
-安装gulp
-npm install gulp --save //安裝gulp模块
-创建gulpfile.js文件
+gulp-sass 编译scss文件
+gulp-babel 编译JS
+gulp-imagemin 处理图片、 字体
+拷贝静态资源
+gulp-swig 处理HTML模板文件
+browser-sync 搭建开发服务器
+监听文件改变
+gulp-useref gulp-if文件引用处理
+gulp-load-plugins 自动加载插件
+
+任务组合
+serve 用于开发环境
+build 用于生产打包
+const serve = series(parallel(style,js,html),ref, server)
+const build = series(clean,parallel(style,js,html,img,extra,font))
+
+启动
+yarn serve
+打包
+yarn build
